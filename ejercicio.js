@@ -16,10 +16,11 @@ array.sort(function(a, b){return b - a})
 
 //Dibujando la matriz
 let nuevaMatriz = []
-let contador = 0
+
 array.forEach((elemento, index) =>{
-    let lineaTemp = []
-    for (let i = 0; i<array.length; i++){
+    let lineaTemp = []                              //Creamos una variable temporal que nos servira para ir guardando las filas
+    for (let i = 0; i<array.length; i++){           //En nuestro for interno para dibujar con #, primero realizamos un condicional, si el indice que estoy iterando en //
+                                                    //el forEach coincide con "i" del for solo agrego nuestro valor, significa que estoy dibujando la diagonal, sino completo con "#"
         if(index == i){
             lineaTemp.push(elemento)
         }
@@ -27,6 +28,6 @@ array.forEach((elemento, index) =>{
             lineaTemp.push('#')
         }
     }
-    nuevaMatriz.push(lineaTemp)
+    nuevaMatriz.push(lineaTemp)                     //Agrego nuestra "linea de tiempo" a la nueva matriz que es el resultado a visualizar.
 })
 console.log(nuevaMatriz)
